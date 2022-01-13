@@ -13,7 +13,6 @@ $(BUILD)/lib/libmbedtls.a: $(TOOLS)
 		rm -fr $(BUILD)/mbedtls; \
 		$(TAR) zxf $(DEPS)/mbedtls-$(MBEDTLS_VERSION).tar.gz; \
 		mv mbedtls-$(MBEDTLS_VERSION) mbedtls; \
-		cp $(DEPS)/mbedtls-config.h mbedtls/include/mbedtls/config.h; \
 		sed -ibak 's/-no_warning_for_no_symbols//' mbedtls/library/Makefile
 	@echo "Building mbedtls for $(TARGET)"
 	@$(SETUP_BUILDENV) cd $(BUILD)/mbedtls; \
